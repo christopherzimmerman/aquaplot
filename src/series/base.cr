@@ -143,4 +143,16 @@ abstract class AquaPlot::XYZ < AquaPlot::SeriesOptions
     super(**options)
     _create_data_file([x, y, z].transpose, @filename)
   end
+
+  def self.from_points(*points : Tuple(U, V, W)) forall U, V, W
+    x = [] of U
+    y = [] of V
+    z = [] of W
+    points.each do |i, j, k|
+      x << i
+      y << j
+      z << k
+    end
+    new(x, y, z)
+  end
 end
