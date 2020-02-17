@@ -134,6 +134,7 @@ abstract class AquaPlot::NColumns < AquaPlot::SeriesOptions
 end
 
 abstract class AquaPlot::XYZ < AquaPlot::SeriesOptions
+
   def initialize(
     x : Indexable(Number),
     y : Indexable(Number),
